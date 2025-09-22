@@ -1,17 +1,17 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-	int num[10] = { 0, };
+	// char Greeting[6] = { 'H', 'E', 'L', 'L', 'O'};
+	// char Greeting[6] = "Hello";
+	
+	string Greeting = "Hello";
+	string Greeting2 = "World";
 
-	for (int i = 6; i > 0; --i) {
-		for (int j = 6; j > 0; --j) {
-			if (i <= j) cout << " ";
-			else cout << "*";
-		}
-		cout << endl;
-	}
+	// 'H' != "H"
+	// "H" == 'H', '\0'
 
-	return 0;
+	cout << Greeting + " " + Greeting2 << endl;
 }
