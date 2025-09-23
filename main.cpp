@@ -1,121 +1,31 @@
 ﻿#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <algorithm>
-#include <string>
-#include <random>
-#include <windows.h>
 
 using namespace std;
 
-#define MAX_SIZE 52
-#define HAND_SIZE 3
-
-int dealerCards[HAND_SIZE];
-int playerCards[HAND_SIZE];
-string dealerResults[HAND_SIZE];
-string playerResults[HAND_SIZE];
-
-string getCardString(int card)
+void Swap(int* pA, int* pB)
 {
-    string suits[] = { u8"♠", u8"♥", u8"♦", u8"♣" };
-    string values[13] = { "A","2","3","4","5","6","7","8","9","10","J","Q","K" };
-
-    int suitIndex = (card - 1) / 13;
-    int valueIndex = (card - 1) % 13;
-
-    return values[valueIndex] + suits[suitIndex];
-}
-
-int getCardValue(int card)
-{
-    int valueIndex = (card - 1) % 13;
-
-    if (valueIndex >= 10) // J Q K
-    {
-        return 10;
-    }
-    if (valueIndex == 0) // A
-    {
-        return 11;
-    }
-    return valueIndex + 1; // 2 ~ 10
-}
-
-int scoreIs(int hand[])
-{
-    int score = 0;
-    int aceCount = 0;
-
-    for (int i = 0; i < HAND_SIZE; ++i)
-    {
-        int value = getCardValue(hand[i]);
-        score += value;
-        if (value == 11) aceCount++;
-    }
-
-    while (score > 21 && aceCount > 0)
-    {
-        score -= 10;
-        aceCount--;
-    }
-
-    return score;
+    int _temp = *pA;
+    *pA = *pB;
+    *pB = _temp;
 }
 
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    srand((unsigned)time(NULL));
+    int A = 10;
+    int B = 20;
 
-    int cardDeck[MAX_SIZE];
-    for (int i = 0; i < MAX_SIZE; ++i)
-    {
-        cardDeck[i] = i + 1;
-    }
+    Swap(&A, &B);
 
-    random_shuffle(&cardDeck[0], &cardDeck[51]);
+    cout << A << endl;
+    cout << B << endl;
 
-    dealerCards[0] = cardDeck[0]; playerCards[0] = cardDeck[1];
-    dealerCards[1] = cardDeck[2]; playerCards[1] = cardDeck[3];
-    dealerCards[2] = cardDeck[4]; playerCards[2] = cardDeck[5];
+    cout << sizeof(int*) << endl;
 
-    for (int i = 0; i < HAND_SIZE; ++i)
-    {
-        dealerResults[i] = getCardString(dealerCards[i]);
-        playerResults[i] = getCardString(playerCards[i]);
-    }
 
-    cout << "\nDealer\tPlayer" << endl;
-    cout << "=-=-=-=-=-=-=-=\n" << endl;
-    for (int i = 0; i < HAND_SIZE; ++i)
-    {
-        cout << dealerResults[i] << "\t" << playerResults[i] << endl;
-    }
-
-    int dealerScore = scoreIs(dealerCards);
-    int playerScore = scoreIs(playerCards);
-
-    cout << "\n=-=-=-=-=-=-=-=\n" << endl;
-    cout << "\nDealer Score: " << dealerScore << endl;
-    cout << "Player Score: " << playerScore << endl;
-
-    if (dealerScore > 21)
-    {
-        cout << "\n\nPlayer Win!" << "\n";
-    }
-    else if (dealerScore <= 21 && playerScore > 21)
-    {
-        cout << "\n\nDealer Win!" << "\n";
-    }
-    else if (dealerScore <= playerScore)
-    {
-        cout << "\n\nPlayer Win!" << "\n";
-    }
-    else if (dealerScore > playerScore)
-    {
-        cout << "\n\nDealer Win!" << "\n";
-    }
     
+    
+
+
+
     return 0;
 }
