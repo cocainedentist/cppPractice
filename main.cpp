@@ -100,21 +100,21 @@ int main()
     cout << "\nDealer Score: " << dealerScore << endl;
     cout << "Player Score: " << playerScore << endl;
 
-    if (playerScore > 21)
+    if (dealerScore > 21)
     {
-        cout << "\n\nDealer Won!" << endl;
+        cout << "\n\nPlayer Win!" << "\n";
     }
-    else if (dealerScore > 21)
+    else if (dealerScore <= 21 && playerScore > 21)
     {
-        cout << "\n\nPlayer Won!" << endl;
+        cout << "\n\nDealer Win!" << "\n";
+    }
+    else if (dealerScore <= playerScore)
+    {
+        cout << "\n\nPlayer Win!" << "\n";
     }
     else if (dealerScore > playerScore)
     {
-        cout << "\n\nDealer Won!" << endl;
-    }
-    else
-    {
-        cout << "\n\nPlayer Won!" << endl;
+        cout << "\n\nDealer Win!" << "\n";
     }
     
     return 0;
