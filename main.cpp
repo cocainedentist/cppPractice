@@ -86,8 +86,8 @@ int main()
         playerResults[i] = getCardString(playerCards[i]);
     }
 
-    cout << "Dealer\tPlayer" << endl;
-    cout << "-------------------" << endl;
+    cout << "\nDealer\tPlayer" << endl;
+    cout << "=-=-=-=-=-=-=-=\n" << endl;
     for (int i = 0; i < HAND_SIZE; ++i)
     {
         cout << dealerResults[i] << "\t" << playerResults[i] << endl;
@@ -96,24 +96,25 @@ int main()
     int dealerScore = scoreIs(dealerCards);
     int playerScore = scoreIs(playerCards);
 
+    cout << "\n=-=-=-=-=-=-=-=\n" << endl;
     cout << "\nDealer Score: " << dealerScore << endl;
     cout << "Player Score: " << playerScore << endl;
 
     if (playerScore > 21)
     {
-        cout << "\nDealer Won!" << endl;
+        cout << "\n\nDealer Won!" << endl;
     }
     else if (dealerScore > 21)
     {
-        cout << "\nPlayer Won!" << endl;
+        cout << "\n\nPlayer Won!" << endl;
     }
     else if (dealerScore > playerScore)
     {
-        cout << "\nDealer Won!" << endl;
+        cout << "\n\nDealer Won!" << endl;
     }
     else
     {
-        cout << "\nPlayer Won!" << endl;
+        cout << "\n\nPlayer Won!" << endl;
     }
     
     return 0;
