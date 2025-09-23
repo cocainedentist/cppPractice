@@ -2,30 +2,33 @@
 
 using namespace std;
 
-void Swap(int* pA, int* pB)
-{
-    int _temp = *pA;
-    *pA = *pB;
-    *pB = _temp;
-}
-
 int main()
 {
-    int A = 10;
-    int B = 20;
+	////int Number[10] = { 0, 1, 2, 3, 4, 5 };
 
-    Swap(&A, &B);
+	////int* P = Number;
 
-    cout << A << endl;
-    cout << B << endl;
-
-    cout << sizeof(int*) << endl;
-
-
-    
-    
+	//////cout << *(Number+1) << endl;
+	//////cout << Number[1] << endl;
+	//////cout << Number++ << endl;
+	////cout << *(++P) << endl;
+	////cout << *(P) << endl;
 
 
+	//int* P = new int[10];
 
-    return 0;
+	//P[1] = 1;  //=>  *(P+1) = 1
+
+	//cout << *(P + 1) << endl;
+
+	int* P = new int;
+
+	delete P;
+
+	*P = 10;
+
+
+
+
+	return 0;
 }
