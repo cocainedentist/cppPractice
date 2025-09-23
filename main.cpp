@@ -11,7 +11,7 @@ int main() {
         pocket[i] = i + 1;
     }
     
-    srand(time(nullptr));
+    srand((unsigned int)time(nullptr));
     for (int i = 0; i < 52 * 100; ++i)
     {
         int firstPick = rand() % 52;
