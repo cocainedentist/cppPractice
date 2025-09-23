@@ -1,2 +1,2 @@
 ﻿  main.cpp
-C:\cocainedentist\C++ Projects\cppPractice\cppPractice\main.cpp(14,5): error C2146: 구문 오류: ';'이(가) 'srand' 식별자 앞에 없습니다.
+  cppPractice.vcxproj -> C:\cocainedentist\C++ Projects\cppPractice\x64\Debug\cppPractice.exe
