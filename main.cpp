@@ -95,5 +95,13 @@ int main()
     cout << "\nDealer Score: " << dealerScore << endl;
     cout << "Player Score: " << playerScore << endl;
 
+    if (dealerScore > playerScore)
+    {
+        cout << "\nDealer Won!" << endl;
+    }
+    else
+    {
+        cout << "\nPlayer Won!" << endl;
+    }
     return 0;
 }
