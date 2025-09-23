@@ -99,7 +99,15 @@ int main()
     cout << "\nDealer Score: " << dealerScore << endl;
     cout << "Player Score: " << playerScore << endl;
 
-    if (playerScore > 21 || dealerScore > playerScore)
+    if (playerScore > 21)
+    {
+        cout << "\nDealer Won!" << endl;
+    }
+    else if (dealerScore > 21)
+    {
+        cout << "\nPlayer Won!" << endl;
+    }
+    else if (dealerScore > playerScore)
     {
         cout << "\nDealer Won!" << endl;
     }
