@@ -1,17 +1,33 @@
 #include <iostream>
-#include <string>
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
+int ball = 0;
+int pickedBall[53] = { 0, };
+
+void ballPicker()
+{
+    bool task = true;
+    while (task)
+    {
+        ball = rand() % 52 + 1;
+        if (pickedBall[ball] == 0)
+        {
+            task = false;
+            pickedBall[ball] = 1;
+        }
+    }
+    cout << "Picked Ball: " << ball << endl;
+}
+
 int main() {
-	// char Greeting[6] = { 'H', 'E', 'L', 'L', 'O'};
-	// char Greeting[6] = "Hello";
-	
-	string Greeting = "Hello";
-	string Greeting2 = "World";
+    srand(time(NULL));
 
-	// 'H' != "H"
-	// "H" == 'H', '\0'
+    for (int i = 0; i < 52; ++i) {
+        ballPicker();
+    }
 
-	cout << Greeting + " " + Greeting2 << endl;
+    cout << "Completed!" << endl;
+    return 0;
 }
