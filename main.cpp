@@ -27,7 +27,8 @@ string getCardString(int card)
     return values[valueIndex] + suits[suitIndex];
 }
 
-int getCardValue(int card) {
+int getCardValue(int card)
+{
     int valueIndex = (card - 1) % 13;
 
     if (valueIndex >= 10) // J Q K
@@ -41,17 +42,20 @@ int getCardValue(int card) {
     return valueIndex + 1; // 2 ~ 10
 }
 
-int scoreIs(int hand[]) {
+int scoreIs(int hand[])
+{
     int score = 0;
     int aceCount = 0;
 
-    for (int i = 0; i < HAND_SIZE; ++i) {
+    for (int i = 0; i < HAND_SIZE; ++i)
+    {
         int value = getCardValue(hand[i]);
         score += value;
         if (value == 11) aceCount++;
     }
 
-    while (score > 21 && aceCount > 0) {
+    while (score > 21 && aceCount > 0)
+    {
         score -= 10;
         aceCount--;
     }
@@ -95,7 +99,7 @@ int main()
     cout << "\nDealer Score: " << dealerScore << endl;
     cout << "Player Score: " << playerScore << endl;
 
-    if (dealerScore > playerScore)
+    if (playerScore > 21 || dealerScore > playerScore)
     {
         cout << "\nDealer Won!" << endl;
     }
@@ -103,5 +107,6 @@ int main()
     {
         cout << "\nPlayer Won!" << endl;
     }
+    
     return 0;
 }
