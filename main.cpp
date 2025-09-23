@@ -24,7 +24,8 @@ void ballPicker()
 int main() {
     srand(time(NULL));
 
-    for (int i = 0; i < 52; ++i) {
+    for (int i = 0; i < 52; ++i)
+    {
         ballPicker();
     }
 
