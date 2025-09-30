@@ -1,29 +1,35 @@
 ﻿#include <iostream>
-#include <bitset>
 
 using namespace std;
 
-#define WorldStatic					0b00000001
-#define WorldDynamic				0b00000010
-#define Pawn						0b00000100
-#define PhysicsBody					0b00001000
-								//  0b00000100 or
-								//  0b00000100 1> is true
 int main()
 {
-	unsigned char MyActorType = Pawn | PhysicsBody;
-	string MyActorTypes = "Pawn, Physics";
-	if (MyActorType & Pawn)
-		if (MyActorType & Pawn)
+	int N = 0;
+	unsigned long long X = 0;
+	unsigned long long Result = 0;
+
+	cin >> N;
+	for (int i = 0; i < N; ++i)
+	{
+		cin >> X;
+		unsigned long long NPOT = 2;
+		for (int j = 1; j < 64; ++j)
 		{
-			cout << "I'm Pawn" << endl;
+			if (NPOT >= X)
+			{
+				if (i == 0)
+				{
+					Result = Result ^ NPOT;
+					break;
+				}
+				else
+				{
+					Result = Result ^ NPOT;
+				}
+				break;
+			}
+			NPOT = NPOT << 2; // More Faster Than	NPOT = NPOT * 2;
 		}
-		else
-		{
-			cout << "I'm not Pawn" << endl;
-
-		}
-
-
-	return 0;
+	}
+	cout << Result << endl;
 }
