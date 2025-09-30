@@ -2,20 +2,37 @@
 
 using namespace std;
 
-class Character
+int Map[10][10] = {
+
+
+};
+
+class Engine
 {
-	
-	void BumpWall()
+public:
+	World MyWorld;
+
+	void Run()
+	{
+		while (true)
+		{
+			Input();
+			Tick();
+			Render();
+		}
+
+	}
+	void Input()
 	{
 
 	}
-	
-	void CharacterMove(char KeyInput)
+
+	void Tick()
 	{
 
 	}
 
-	void IsArrive()
+	void Render()
 	{
 
 	}
@@ -24,17 +41,63 @@ class Character
 class World
 {
 public:
-	int Wall[10];
-	int Floor[10];
+	Player MyPlayer;
+	Monster MyMonster;
+	Wall MyWall[100];
+	Floor MyFloor[100];
+	Goal MyGoal;
 
-	Character Player;
-	Character Monster;
-	int Destination;
+	void GameOver()
+	{
+
+	}
+};
+
+class Wall
+{
+public:
+
+};
+
+class Floor
+{
+public:
+
+};
+
+class Player
+{
+public:
+	void Move()
+	{
+
+	}
+};
+
+class Monster
+{
+public:
+	void Move()
+	{
+
+	}
+
+};
+
+class Goal
+{
+public:
+
 };
 
 int main()
 {
-	World world[10][10];
+	//init()
+	Engine* MyEngine = new Engine();
+	//(*MyEngine).Run();
+	MyEngine->Run();
+	delete MyEngine;
+	MyEngine = nullptr;
 
 	return 0;
 }
