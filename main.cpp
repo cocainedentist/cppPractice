@@ -2,49 +2,39 @@
 
 using namespace std;
 
-
-class State
+class Character
 {
-public:
-	int ID;
-	string StateName;
-};
-
-class Transition
-{
-public:
-	int CurrentState;
-	string Condition;
-	int NextState;
-};
-
-class FSM
-{
-public:
-	FSM()
+	
+	void BumpWall()
 	{
 
 	}
-	State States[4];
-	Transition Transitions[5];
-
-	void Transit(State InState, string Condition)
+	
+	void CharacterMove(char KeyInput)
 	{
 
 	}
+
+	void IsArrive()
+	{
+
+	}
+};
+
+class World
+{
+public:
+	int Wall[10];
+	int Floor[10];
+
+	Character Player;
+	Character Monster;
+	int Destination;
 };
 
 int main()
 {
-	State States[4];
-	States[0].ID = 1;
-	States[0].StateName = "Patrol";
-	States[1].ID = 2;
-	States[1].StateName = "Chase";
-	States[2].ID = 3;
-	States[2].StateName = "Attack";
-	States[3].ID = 4;
-	States[3].StateName = "Death";
+	World world[10][10];
 
 	return 0;
 }
