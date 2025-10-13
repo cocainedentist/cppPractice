@@ -21,6 +21,8 @@ class Player
 {
 public:
 	Monster M;
+	int PlayerX = 0;
+	int PlayerY = 0;
 	int Damage = 0;
 	int CurrentGold = 0;
 
