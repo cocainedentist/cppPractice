@@ -5,11 +5,9 @@
 class Monster : public Character
 {
 public:
-	//int HP;
-	//int Gold;
+	Monster();
+	~Monster();
 
-	//void Move();
 	void Drop();
 	void Destroy();
 };
-

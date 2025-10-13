@@ -1,8 +1,7 @@
 ﻿  Boar.cpp
-  Character.cpp
   Goblin.cpp
   main.cpp
-  Player.cpp
+  Monster.cpp
   Slime.cpp
   World.cpp
   코드를 생성하고 있습니다...
