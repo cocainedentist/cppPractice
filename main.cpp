@@ -2,73 +2,40 @@
 
 using namespace std;
 
-int Map[10][10] = {
-
-
-};
-
-class Engine
+class Character
 {
 public:
-	World MyWorld;
+	Player Player;
+	Monster Slime;
+	Monster Wildboar;
+	Monster Goblin;
+	int HP = 10;
 
-	void Run()
-	{
-		while (true)
-		{
-			Input();
-			Tick();
-			Render();
-		}
-
-	}
-	void Input()
+	void Move()
 	{
 
 	}
-
-	void Tick()
-	{
-
-	}
-
-	void Render()
-	{
-
-	}
-};
-
-class World
-{
-public:
-	Player MyPlayer;
-	Monster MyMonster;
-	Wall MyWall[100];
-	Floor MyFloor[100];
-	Goal MyGoal;
-
-	void GameOver()
-	{
-
-	}
-};
-
-class Wall
-{
-public:
-
-};
-
-class Floor
-{
-public:
-
 };
 
 class Player
 {
 public:
+	Monster M;
+	int Damage = 0;
+	int CurrentGold = 0;
+
+	void Attack()
+	{
+		if (M.HP <= 0)
+		{
+			GetGold();
+		}
+	}
 	void Move()
+	{
+
+	}
+	int GetGold()
 	{
 
 	}
@@ -77,27 +44,16 @@ public:
 class Monster
 {
 public:
-	void Move()
+	int HP = 10;
+	int Gold;
+
+	int Death()
 	{
-
+		return Gold;
 	}
-
-};
-
-class Goal
-{
-public:
-
 };
 
 int main()
 {
-	//init()
-	Engine* MyEngine = new Engine();
-	//(*MyEngine).Run();
-	MyEngine->Run();
-	delete MyEngine;
-	MyEngine = nullptr;
-
 	return 0;
 }
