@@ -1,61 +1,74 @@
 ﻿#include <iostream>
+#include "World.h"
+#include "Slime.h"
+#include "Player.h"
+#include "Character.h"
 
 using namespace std;
 
-class Character
+
+//1. ������, �Ҹ��� ������ ����
+class Ŭ������
 {
 public:
-	Player Player;
-	Monster Slime;
-	Monster Wildboar;
-	Monster Goblin;
-	int HP = 10;
-
-	void Move()
-	{
-
-	}
+	Ŭ������(); //������
+	~Ŭ������(); //�Ҹ���
 };
 
-class Player
+Ŭ������::Ŭ������()
+{
+}
+
+Ŭ������::~Ŭ������()
+{
+}
+
+
+class B
 {
 public:
-	Monster M;
-	int PlayerX = 0;
-	int PlayerY = 0;
-	int Damage = 0;
-	int CurrentGold = 0;
-
-	void Attack()
-	{
-		if (M.HP <= 0)
-		{
-			GetGold();
-		}
-	}
-	void Move()
-	{
-
-	}
-	int GetGold()
-	{
-
-	}
+	B();
+	~B();
 };
 
-class Monster
+B::B()
+{
+	cout << "B 생성자" << endl;
+}
+
+B::~B()
+{
+	cout << "B 소멸자" << endl;
+}
+
+
+class A : public B
 {
 public:
-	int HP = 10;
-	int Gold;
+	A();
+	~A();
 
-	int Death()
-	{
-		return Gold;
-	}
 };
+
+A::A()
+{
+	cout << "A 생성자" << endl;
+}
+
+A::~A()
+{
+	cout << "A 소멸자" << endl;
+}
+
+
+
+//2. ������ �Ҹ� ȣ�� ����
 
 int main()
 {
+	A* a = new A();
+
+	delete a;
+
 	return 0;
 }
