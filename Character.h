@@ -2,9 +2,11 @@
 class Character
 {
 public:
+	Character();
+	~Character();
+
 	int HP;
 	int Gold;
 
-	void Move();
+	virtual void Move();
 };
-

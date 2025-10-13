@@ -1,2 +1,9 @@
-﻿  main.cpp
+﻿  Boar.cpp
+  Character.cpp
+  Goblin.cpp
+  main.cpp
+  Player.cpp
+  Slime.cpp
+  World.cpp
+  코드를 생성하고 있습니다...
   cppPractice.vcxproj -> C:\cocainedentist\C++ Projects\cppPractice\x64\Debug\cppPractice.exe

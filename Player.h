@@ -1,14 +1,14 @@
 #pragma once
+
 #include "Character.h"
 
 class Player : public Character
 {
 public:
-	//int HP;
-	//int Gold;
+	Player();
+	~Player();
 
-	void Move();
+	void Move() override;
 	void Attack();
 	void Collect();
 };
-

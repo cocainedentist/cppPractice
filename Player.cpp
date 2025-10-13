@@ -1,22 +1,24 @@
-#include "Player.h"
+﻿#include "Player.h"
+
 #include <iostream>
 
 using namespace std;
 
 
+Player::Player()
+{
+	cout << "Player Created." << endl;
+}
+
+Player::~Player()
+{
+}
+
 void Player::Move()
 {
-
-	Character::Move();
-	Character::Move();
-	Character::Move();
-
-	HP = 100;
-
 	cout << "Player ";
 
 	Character::Move();
-
 }
 
 void Player::Attack()
