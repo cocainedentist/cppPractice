@@ -6,19 +6,22 @@
 
 using namespace std;
 
+
+#define AMOUNT 5
+
 int main()
 {
 	vector<Slime> Slimes;
 	vector<Goblin> Goblins;
 	srand(time(0));
 
-	int Random = rand() % 5;
+	int Random = rand() % AMOUNT;
 	for (int i = 0; i < Random; ++i)
 	{
 		Slimes.push_back(Slime());
 	}
 
-	Random = rand() % 5;
+	Random = rand() % AMOUNT;
 	for (int i = 0; i < Random; ++i)
 	{
 		Goblins.push_back(Goblin());
