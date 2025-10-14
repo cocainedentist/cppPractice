@@ -13,5 +13,7 @@ Goblin::~Goblin()
 
 void Goblin::Move()
 {
-	std::cout << "Goblin Moved" << std::endl;
+	std::cout << "°íºí¸°" << std::endl;
+
+	Monster::Move();
 }

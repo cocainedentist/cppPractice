@@ -1,41 +1,59 @@
-﻿#include <iostream>
-#include <vector>
+#include <iostream>
+#include <vector> //dynamic array, TArray
 
 #include "Goblin.h"
 #include "Slime.h"
+#include "Boar.h"
 
 using namespace std;
 
-
-#define MAX_AMOUNT 5
-
 int main()
 {
-	vector<Slime> Slimes;
-	vector<Goblin> Goblins;
-	srand(time(0));
+	srand((unsigned int)(time(nullptr)));
 
-	int Random = rand() % MAX_AMOUNT;
-	for (int i = 0; i < Random; ++i)
+	vector<Monster*> Monsters;
+
+	int GoblinCount = rand() % 10 + 1; // 1-10
+	int SlimeCount = rand() % (10 - GoblinCount) + 1; // 
+	int BoarCount = rand() % (10 - SlimeCount - GoblinCount) + 1;
+	
+	for (int i = 0; i < GoblinCount; ++i)
 	{
-		Slimes.push_back(Slime());
+		Monsters.push_back(new Goblin);
+	}
+	
+	if (SlimeCount > 0)
+	{
+		for (int i = 0; i < SlimeCount; ++i)
+		{
+			Monsters.push_back(new Slime);
+		}
+	}
+	
+	if (BoarCount > 0)
+	{
+		for (int i = 0; i < BoarCount; ++i)
+		{
+			Monsters.push_back(new Boar);
+		}
 	}
 
-	Random = rand() % MAX_AMOUNT;
-	for (int i = 0; i < Random; ++i)
+
+	for (auto M : Monsters)
 	{
-		Goblins.push_back(Goblin());
+		M->Move();
 	}
 
-	for (auto Value : Slimes)
+	for (auto M : Monsters)
 	{
-		Value.Move();
+		delete M;
+		M = nullptr;
 	}
 
-	for (auto Value : Goblins)
-	{
-		Value.Move();
-	}
+	Monsters.clear();
+	
+
+
 
 	return 0;
 }

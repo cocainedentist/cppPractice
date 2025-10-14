@@ -1,12 +1,16 @@
-﻿#pragma once
+#pragma once
 
 #include "Util.h"
+#include "Monster.h"
 
-class Slime
+class Slime : public Monster
 {
 public:
-	Slime();
-	~Slime();
-	
-	void Move();
+	Slime() {}
+	~Slime() {}
+
+	virtual void Move() override;
+
 };
+
+

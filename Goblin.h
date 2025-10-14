@@ -1,12 +1,18 @@
-ï»¿#pragma once
+#pragma once
 
 #include "Util.h"
+#include "Monster.h"
 
-class Goblin
+//C++
+//Ä¸½¶È­, Encapsulation
+class Goblin : public Monster
 {
+//Á¢±Ù Á¦ÇÑÀÚ
 public:
 	Goblin();
 	~Goblin();
 
-	void Move();
+	virtual void Move() override;
+
 };
+
