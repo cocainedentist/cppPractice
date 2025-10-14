@@ -2,11 +2,11 @@
 
 #include "Util.h"
 
-class Goblin
+class Slime
 {
 public:
-	Goblin();
-	~Goblin();
-
+	Slime();
+	~Slime();
+	
 	void Move();
 };

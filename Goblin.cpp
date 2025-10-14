@@ -1,21 +1,17 @@
 #include "Goblin.h"
+#include <iostream>
 
-Goblin::Goblin() : Gold(100), HP(100)
+Goblin::Goblin()
 {
-	Gold = 100;
-	HP = 100;
+
 }
 
 Goblin::~Goblin()
 {
+
 }
 
-void Goblin::SetHP(int Value)
+void Goblin::Move()
 {
-	HP = Value;
-}
-
-int Goblin::GetHP()
-{
-	return HP;
+	std::cout << "Goblin Moved" << std::endl;
 }

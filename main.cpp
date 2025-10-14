@@ -1,15 +1,38 @@
 ﻿#include <iostream>
+#include <vector>
+
 #include "Goblin.h"
-#include "Util.h"
+#include "Slime.h"
 
 using namespace std;
 
 int main()
 {
-	Goblin MyGoblin;
+	vector<Slime> Slimes;
+	vector<Goblin> Goblins;
+	srand(time(0));
 
-	MyGoblin.SetGold(100);
-	cout << MyGoblin.GetGold() << endl;
+	int Random = rand() % 5;
+	for (int i = 0; i < Random; ++i)
+	{
+		Slimes.push_back(Slime());
+	}
+
+	Random = rand() % 5;
+	for (int i = 0; i < Random; ++i)
+	{
+		Goblins.push_back(Goblin());
+	}
+
+	for (auto Value : Slimes)
+	{
+		Value.Move();
+	}
+
+	for (auto Value : Goblins)
+	{
+		Value.Move();
+	}
 
 	return 0;
 }
