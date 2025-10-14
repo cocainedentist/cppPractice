@@ -16,4 +16,6 @@ public:
 	}
 
 	virtual void Move() override;
+
+	void Bump();
 };

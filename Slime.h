@@ -11,6 +11,6 @@ public:
 
 	virtual void Move() override;
 
+	void Slide();
 };
-
 

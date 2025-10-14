@@ -4,59 +4,50 @@
 #include "Goblin.h"
 #include "Slime.h"
 #include "Boar.h"
+#include "Monster.h"
 
 using namespace std;
 
+
 int main()
 {
-	srand((unsigned int)(time(nullptr)));
-
 	vector<Monster*> Monsters;
+	srand(time(nullptr));
 
-	int GoblinCount = rand() % 10 + 1; // 1-10
-	int SlimeCount = 0;
-	int BoarCount = 0;
-	if (GoblinCount < 10)
+	for (int i = 0; i < 10; ++i)
 	{
-		SlimeCount = rand() % (10 - GoblinCount) + 1; // 
-	}
-	else
-	{
-		SlimeCount = 0;
-	}
-	if (GoblinCount + SlimeCount < 10)
-	{
-		BoarCount = rand() % (10 - SlimeCount - GoblinCount) + 1;
-	}
-	else
-	{
-		BoarCount = 0;
-	}
-
-	for (int i = 0; i < GoblinCount; ++i)
-	{
-		Monsters.push_back(new Goblin);
-	}
-	
-	if (SlimeCount > 0)
-	{
-		for (int i = 0; i < SlimeCount; ++i)
+		if (rand() % 3 == 0)
 		{
 			Monsters.push_back(new Slime);
 		}
-	}
-	
-	if (BoarCount > 0)
-	{
-		for (int i = 0; i < BoarCount; ++i)
+		else if (rand() % 3 == 1)
 		{
 			Monsters.push_back(new Boar);
 		}
+		else
+		{
+			Monsters.push_back(new Goblin);
+		}
+
 	}
 
 	for (auto M : Monsters)
 	{
-		M->Move();
+		Slime* S = dynamic_cast<Slime*>(M);
+		Goblin* G = dynamic_cast<Goblin*>(M);
+		Boar* B = dynamic_cast<Boar*>(M);
+		if (S)
+		{
+			S->Slide();
+		}
+		if (G)
+		{
+			G->Sprint();
+		}
+		if (B)
+		{
+			B->Bump();
+		}
 	}
 
 	for (auto M : Monsters)
@@ -64,11 +55,7 @@ int main()
 		delete M;
 		M = nullptr;
 	}
-
-	Monsters.clear();
 	
-
-
-
+	Monsters.clear();
 	return 0;
 }

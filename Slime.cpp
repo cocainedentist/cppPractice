@@ -1,8 +1,13 @@
-#include "Slime.h"
+ï»¿#include "Slime.h"
 #include <iostream>
 
 void Slime::Move()
 {
-	std::cout << "½½¶óÀÓ" << std::endl;
+	std::cout << "Slime ";
 	Monster::Move();
+}
+
+void Slime::Slide()
+{
+	std::cout << "Slide " << std::endl;
 }
