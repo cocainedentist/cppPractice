@@ -14,9 +14,29 @@ int main()
 	vector<Monster*> Monsters;
 
 	int GoblinCount = rand() % 10 + 1; // 1-10
-	int SlimeCount = rand() % (10 - GoblinCount) + 1; // 
-	int BoarCount = rand() % (10 - SlimeCount - GoblinCount) + 1;
+	int SlimeCount = 0;
+	int BoarCount = 0;
+	if (GoblinCount < 10)
+	{
+		SlimeCount = rand() % (10 - GoblinCount) + 1; // 
+	}
+	else
+	{
+		SlimeCount = 0;
+	}
+	if (GoblinCount + SlimeCount < 10)
+	{
+		BoarCount = rand() % (10 - SlimeCount - GoblinCount) + 1;
+	}
+	else
+	{
+		BoarCount = 0;
+	}
 	
+	cout << GoblinCount << endl;
+	cout << SlimeCount << endl;
+	cout << BoarCount << endl;
+
 	for (int i = 0; i < GoblinCount; ++i)
 	{
 		Monsters.push_back(new Goblin);
@@ -37,7 +57,6 @@ int main()
 			Monsters.push_back(new Boar);
 		}
 	}
-
 
 	for (auto M : Monsters)
 	{
