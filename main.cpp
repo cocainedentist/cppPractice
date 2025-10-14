@@ -1,20 +1,15 @@
 ﻿#include <iostream>
-#include "World.h"
-#include "Slime.h"
-#include "Player.h"
-#include "Character.h"
+#include "Goblin.h"
+#include "Util.h"
 
 using namespace std;
 
-
 int main()
 {
-	Slime* MySlime;
+	Goblin MyGoblin;
 
-	MySlime = new Slime();
-	MySlime->Move();
-
-	delete MySlime;
+	MyGoblin.SetGold(100);
+	cout << MyGoblin.GetGold() << endl;
 
 	return 0;
 }

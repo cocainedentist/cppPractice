@@ -1,10 +1,26 @@
-#pragma once
+﻿#pragma once
 
-#include "Monster.h"
+#include "Util.h"
 
-class Goblin : public Monster
+//ĸ��ȭ, Encapsulation
+class Goblin
 {
+	//���� ������
 public:
 	Goblin();
 	~Goblin();
+
+	//accessor
+	void SetHP(int Value);
+	int GetHP();
+
+	//Getter(int, Gold);
+	//Setter(int, Gold);
+
+	Property(int, Gold);
+
+	//Property
+private:
+	int HP = 100;
+	int Gold = 100;
 };
