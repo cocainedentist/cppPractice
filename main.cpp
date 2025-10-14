@@ -32,10 +32,6 @@ int main()
 	{
 		BoarCount = 0;
 	}
-	
-	cout << GoblinCount << endl;
-	cout << SlimeCount << endl;
-	cout << BoarCount << endl;
 
 	for (int i = 0; i < GoblinCount; ++i)
 	{
