@@ -7,7 +7,7 @@
 using namespace std;
 
 
-#define AMOUNT 5
+#define MAX_AMOUNT 5
 
 int main()
 {
@@ -15,13 +15,13 @@ int main()
 	vector<Goblin> Goblins;
 	srand(time(0));
 
-	int Random = rand() % AMOUNT;
+	int Random = rand() % MAX_AMOUNT;
 	for (int i = 0; i < Random; ++i)
 	{
 		Slimes.push_back(Slime());
 	}
 
-	Random = rand() % AMOUNT;
+	Random = rand() % MAX_AMOUNT;
 	for (int i = 0; i < Random; ++i)
 	{
 		Goblins.push_back(Goblin());
