@@ -8,53 +8,28 @@
 
 using namespace std;
 
+class Parent
+{
+public:
+	Parent() {};
+	virtual ~Parent() {};
+};
+
+class Child : public Parent
+{
+public:
+	Child() {};
+	virtual ~Child() {};
+};
+
+
 int main()
 {
-	vector<Monster*> Monsters;
-	srand(time(nullptr));
+	Parent* P = new Child();
 
-	for (int i = 0; i < 10; ++i)
-	{
-		if (rand() % 3 == 0)
-		{
-			Monsters.push_back(new Slime);
-		}
-		else if (rand() % 3 == 1)
-		{
-			Monsters.push_back(new Boar);
-		}
-		else
-		{
-			Monsters.push_back(new Goblin);
-		}
+	Monster* MyMonster = new Goblin();
 
-	}
+	delete MyMonster;
 
-	for (auto M : Monsters)
-	{
-		Slime* S = dynamic_cast<Slime*>(M);
-		Goblin* G = dynamic_cast<Goblin*>(M);
-		Boar* B = dynamic_cast<Boar*>(M);
-		if (S)
-		{
-			S->Slide();
-		}
-		if (G)
-		{
-			G->Sprint();
-		}
-		if (B)
-		{
-			B->Bump();
-		}
-	}
-
-	for (auto M : Monsters)
-	{
-		delete M;
-		M = nullptr;
-	}
-	
-	Monsters.clear();
 	return 0;
 }
