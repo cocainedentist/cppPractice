@@ -17,11 +17,12 @@ int main(int argc, char* argv[])
 	delete MyEngine;
 	MyEngine = nullptr;*/
 
-    ifstream file(FILE);  // 읽기용 파일 스트림
+    ifstream file(FILE);
 
     string line;
-    while (getline(file, line)) {  // 한 줄씩 읽기
-        cout << line << endl;      // 출력
+    while (getline(file, line))
+	{
+        cout << line << endl;
     }
 
     file.close();
