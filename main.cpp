@@ -1,35 +1,30 @@
+#include "Engine.h"
+#include <fstream>
 #include <iostream>
-#include <vector> //dynamic array, TArray
-
-#include "Goblin.h"
-#include "Slime.h"
-#include "Boar.h"
-#include "Monster.h"
+#include <string>
 
 using namespace std;
 
-class Parent
+#define FILE "Level01.map"
+
+int main(int argc, char* argv[])
 {
-public:
-	Parent() {};
-	virtual ~Parent() {};
-};
+	/*FEngine* MyEngine = new FEngine();
+	MyEngine->Init();
+	MyEngine->Run();
+	MyEngine->Term();
 
-class Child : public Parent
-{
-public:
-	Child() {};
-	virtual ~Child() {};
-};
+	delete MyEngine;
+	MyEngine = nullptr;*/
 
+    ifstream file(FILE);  // 읽기용 파일 스트림
 
-int main()
-{
-	Parent* P = new Child();
+    string line;
+    while (getline(file, line)) {  // 한 줄씩 읽기
+        cout << line << endl;      // 출력
+    }
 
-	Monster* MyMonster = new Goblin();
-
-	delete MyMonster;
+    file.close();
 
 	return 0;
 }

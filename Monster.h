@@ -1,17 +1,4 @@
-#pragma once
 
-#include "Util.h"
-
-class Monster
+class AMonster
 {
-public:
-	Monster()
-	{
-	
-	}
-	~Monster()
-	{
-	
-	}
-	virtual void Move();
 };
