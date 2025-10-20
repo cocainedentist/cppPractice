@@ -1,20 +1,58 @@
 #pragma once
+class UWorld;
+
 class FEngine
 {
-public:
+protected:
 	FEngine();
+
+public:
+
 	virtual ~FEngine();
 
-	void Init(); //초기화
-	void Run(); //실행
-	void Term(); //종료
+	virtual void Init();
+	virtual void Run();
+	virtual void Term();
+
+	__forceinline UWorld* GetWorld() const
+	{
+		return World;
+	}
+
+	__forceinline int GetKeyCode() const
+	{
+		return KeyCode;
+	}
 
 protected:
 	void Input();
 	void Tick();
 	void Render();
 
+	class UWorld* World;
+
 	bool bIsRunning = true;
 
+	int KeyCode = 0;
+
+
+public:
+	static FEngine* GetInstance()
+	{
+		if (Instance == nullptr)
+		{
+			Instance = new FEngine();
+		}
+		return Instance;
+	}
+
+protected:
+	static FEngine* Instance;
 };
+
+//extern FEngine* GEngine;
+
+#define GEngine		FEngine::GetInstance()
+
+
 

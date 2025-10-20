@@ -1,2 +1,4 @@
 ﻿  main.cpp
-  cppPractice.vcxproj -> C:\cocainedentist\C++ Projects\cppPractice\x64\Debug\cppPractice.exe
+main.obj : error LNK2005: "class FEngine * GEngine" (?GEngine@@3PEAVFEngine@@EA) already defined in Engine.obj
+main.obj : error LNK2001: unresolved external symbol "public: static int Singleton::InstanceCount" (?InstanceCount@Singleton@@2HA)
+C:\cocainedentist\C++ Projects\cppPractice\x64\Debug\cppPractice.exe : fatal error LNK1120: 1 unresolved externals

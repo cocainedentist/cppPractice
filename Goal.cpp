@@ -1,12 +1,10 @@
 #include "Goal.h"
-#include <iostream>
 
 AGoal::AGoal()
 {
-	std::cout << "AGoal Constructor" << std::endl;
+	ZOrder = 1000;
 }
 
 AGoal::~AGoal()
 {
-	std::cout << "AGoal Destructor" << std::endl;
 }

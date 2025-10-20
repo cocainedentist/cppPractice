@@ -1,7 +1,8 @@
 #pragma once
+
 #include "Vector.h"
 
-//2D
+//2d 
 
 class AActor
 {
@@ -9,10 +10,12 @@ public:
 	AActor();
 	virtual ~AActor();
 
-	//vftbl
+	//virtual function table ->vftbl
 	//override
-	virtual void Tick(); // it can be redefined by child.
-	
+	virtual void Tick(); //이건 자식이 재정의 할수도 있다.
+	virtual void Render();
+
+
 	__forceinline FVector2D GetActorLocation() const
 	{
 		return Location;
@@ -25,7 +28,19 @@ public:
 		Location.Y = Value.Y;
 	}
 
-private:
+	__forceinline char GetShape() 
+	{
+		return Shape;
+	}
+
+	void SetShape(char Value)
+	{
+		Shape = Value;
+	}
+
+protected:
 	FVector2D Location;
+	char Shape;
+	int ZOrder;
 };
 

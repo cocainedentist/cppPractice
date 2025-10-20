@@ -1,8 +1,9 @@
 #pragma once
 #include "Actor.h"
-
-class AGoal
+class AGoal : public AActor
 {
+public:
 	AGoal();
 	virtual ~AGoal();
 };
+

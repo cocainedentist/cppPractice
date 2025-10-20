@@ -1,12 +1,10 @@
 #include "Floor.h"
-#include <iostream>
 
 AFloor::AFloor()
 {
-	std::cout << "AFloor Constructor" << std::endl;
+	ZOrder = 0;
 }
 
 AFloor::~AFloor()
 {
-	std::cout << "AFloor Destructor" << std::endl;
 }
