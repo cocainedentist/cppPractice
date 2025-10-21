@@ -1,4 +1,31 @@
 ﻿  DynamicArray.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sal.h(2361,1): error C2143: syntax error: missing ';' before 'extern'
+  (compiling source file 'DynamicArray.cpp')
+  
+C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(26,9): error C2760: syntax error: '}' was unexpected here; expected ';'
+  (compiling source file 'DynamicArray.cpp')
+      C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(26,9):
+      the template instantiation context (the oldest one first) is
+          C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(4,7):
+          while compiling class template 'TDynamicArray'
+  
+C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(62,9): error C2760: syntax error: 'void' was unexpected here; expected 'declaration'
+  (compiling source file 'DynamicArray.cpp')
+  
   main.cpp
+C:\cocainedentist\C++ Projects\cppPractice\cppPractice\main.cpp(7,1): error C2143: syntax error: missing ';' before 'int'
+C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(26,9): error C2760: syntax error: '}' was unexpected here; expected ';'
+  (compiling source file 'main.cpp')
+      C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(26,9):
+      the template instantiation context (the oldest one first) is
+          C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(4,7):
+          while compiling class template 'TDynamicArray'
+  
+C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(62,9): error C2760: syntax error: 'void' was unexpected here; expected 'declaration'
+  (compiling source file 'main.cpp')
+  
+C:\cocainedentist\C++ Projects\cppPractice\cppPractice\main.cpp(16,17): error C2039: 'PrintArray': is not a member of 'TDynamicArray<int>'
+      C:\cocainedentist\C++ Projects\cppPractice\cppPractice\DynamicArray.h(4,7):
+      see declaration of 'TDynamicArray<int>'
+  
   Generating Code...
-  cppPractice.vcxproj -> C:\cocainedentist\C++ Projects\cppPractice\x64\Debug\cppPractice.exe

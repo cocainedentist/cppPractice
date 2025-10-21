@@ -6,7 +6,7 @@
 
 int main()
 {
-	TDynamicArray MyDynamicArray;
+	TDynamicArray<int> MyDynamicArray;
 
 	for (int i = 0; i < 18; i++)
 	{
