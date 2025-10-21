@@ -8,6 +8,7 @@ public:
 
 	int* Data = nullptr;
 	int Size = 0;
+	int Capacity = 0;
 
 	int Index = 0;
 
