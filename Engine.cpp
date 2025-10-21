@@ -29,7 +29,7 @@ void FEngine::Init()
 {
 	World = new UWorld();
 
-	std::ifstream MapFile("Level01.map");
+	std::ifstream MapFile("level01.map");
 
 	if (MapFile.is_open())
 	{
@@ -72,17 +72,17 @@ void FEngine::Init()
 				{
 					AActor* NewActor = new AFloor();
 					NewActor->SetActorLocation(FVector2D(X, Y));
-					NewActor->SetShape(Line[X]);
+					NewActor->SetShape(' ');
 					World->SpawnActor(NewActor);
 				}
 			}
 			Y++;
 		}
+
 	}
-
-	sort(World->GetAllActors(), )
-
 	MapFile.close();
+
+	World->SortActor();
 }
 
 void FEngine::Run()
