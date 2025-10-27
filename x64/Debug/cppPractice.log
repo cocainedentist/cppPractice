@@ -1,13 +1,2 @@
 ﻿  Actor.cpp
-  DynamicArray.cpp
-  Engine.cpp
-  Floor.cpp
-  Goal.cpp
-  main.cpp
-C:\cocainedentist\C++ Projects\cppPractice\cppPractice\main.cpp(29,7): warning C4834: discarding return value of function with [[nodiscard]] attribute
-  Monster.cpp
-  Player.cpp
-  Wall.cpp
-  World.cpp
-  Generating Code...
   cppPractice.vcxproj -> C:\cocainedentist\C++ Projects\cppPractice\x64\Debug\cppPractice.exe

@@ -1,9 +1,9 @@
-#include "Actor.h"
+﻿#include "Actor.h"
 #include <iostream>
 #include <Windows.h>
 
 AActor::AActor() :
-	Shape(' '),  Location(0, 0)
+	Shape(' '), Location(0, 0)
 {
 }
 
@@ -27,8 +27,8 @@ void AActor::Render()
 
 bool AActor::CheckCollsion(const AActor* OtherActor)
 {
-	if (OtherActor->bIsCollision && bIsCollision &&
-		this->Location == OtherActor->Location)
+	if (this != OtherActor && OtherActor->bIsCollision && bIsCollision &&
+		this->Location == OtherActor->Location) //���� ���
 	{
 		return true;
 	}
